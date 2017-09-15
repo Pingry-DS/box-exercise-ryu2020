@@ -18,11 +18,13 @@ public class Box <T> {
 
   /**
    * Check the contents of the box
-   * @return WHATS IN THE FUCKING BOX
+   * @return WHATS IN THE BOX
    */
   public T getContents(){
     return contents;
   }
+
+  public void setContents(T c) {contents = c;};
 
   /**
    * Tell whether the box is full or not
@@ -34,7 +36,7 @@ public class Box <T> {
 
   /**
    * Empty out the box, and give back hatever was in it
-   * @return WHATS IN THE MOTHERFUCKING BOX
+   * @return WHATS IN THE BOX
    */
   public T empty(){
     T c =  contents;
@@ -52,25 +54,26 @@ public class Box <T> {
     // Make two boxes
     Box<String> stringBox = new Box<String>();
     //TODO start the second box with contents inside
-    Box<Integer> intBox   = new Box<Integer>();
+    Box<Integer> intBox = new Box<Integer>(new Integer(100));
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
     //TODO Add something to a box
-
+    stringBox.setContents("Thing in a box");
 
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
     //TODO Test your peek method
-
+    stringBox.setContents(stringBox.getContents() + " that has been edited");
 
     // View contents (via toString method)
     System.out.println("The boxes contain: " + stringBox + ", " + intBox);
 
     //TODO Empty a boxes
+    String str = stringBox.empty();
 
 
 
